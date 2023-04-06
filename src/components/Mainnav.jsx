@@ -5,7 +5,7 @@ import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import TvIcon from "@material-ui/icons/Tv";
 import MovieIcon from "@material-ui/icons/Movie";
 import SearchIcon from "@material-ui/icons/Search";
-import WhatshotIcon from "@material-ui/icons/Whatshot";
+import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 //import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -13,7 +13,7 @@ const useStyles = makeStyles({
         width: "100%",
         position: "fixed",
         bottom: 0,
-        backgroundColor: "#2d313a",
+        backgroundColor: "#189AB4", //#2d313a
         zIndex: 100,
     },
 });
@@ -47,7 +47,7 @@ export default function SimpleBottomNavigation() {
             <BottomNavigationAction
                 style={{ color: "white" }}
                 label="Trending"
-                icon={<WhatshotIcon />}
+                icon={<LocalFireDepartmentIcon />}
             />
             <BottomNavigationAction
                 style={{ color: "white" }}
