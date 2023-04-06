@@ -6,7 +6,7 @@ import TvIcon from "@material-ui/icons/Tv";
 import MovieIcon from "@material-ui/icons/Movie";
 import SearchIcon from "@material-ui/icons/Search";
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
-//import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles({
     root: {
@@ -21,19 +21,19 @@ const useStyles = makeStyles({
 export default function SimpleBottomNavigation() {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
-    //const history = useHistory();
+    const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     if (value === 0) {
-    //         history.push("/");
-    //     } else if (value === 1) {
-    //         history.push("/movies");
-    //     } else if (value === 2) {
-    //         history.push("/series");
-    //     } else if (value === 3) {
-    //         history.push("/search");
-    //     }
-    // }, [value, history]);
+    useEffect(() => {
+        if (value === 0) {
+            navigate("/");
+        } else if (value === 1) {
+            navigate("/movies");
+        } else if (value === 2) {
+            navigate("/series");
+        } else if (value === 3) {
+            navigate("/search");
+        }
+    }, [value, navigate]);
 
     return (
         <BottomNavigation
