@@ -48,7 +48,7 @@ Start the server
 
 ## Acknowledgements
 
- - The Movie DB Org for the api usage for retreiving the results anf using in the project.
+ - The Movie DB Org for the api usage for retreiving the results and using in the project.
  - Material UI for using various components across the development of this application.
 
 ## Authors
