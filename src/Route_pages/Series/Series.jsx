@@ -19,7 +19,7 @@ const Series = () => {
 
     const fetchMovies = async () => {
         const { data } = await axios.get(
-            `http://localhost:8080/series?page=${page}`
+            `https://ewd-assign2.onrender.com/series?page=${page}`
         );
 
         setContent(data.results);

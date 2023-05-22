@@ -16,7 +16,7 @@ import CustomPagination from '../../components/pagination/CustomPagination'
 
 const Search = () => {
 
-    const api_key = 'ad7222180e17532d634c8f4c01feb56e';
+
 
     const [type, setType] = useState(0);
     const [searchText, setSearchText] = useState("");
@@ -38,7 +38,7 @@ const Search = () => {
             console.log("Sending search request...");
 
             const { data } = await axios.get(
-                `http://localhost:8080/search?type=${type ? "tv" : "movie"}&query=${searchText}&page=${page}`
+                `https://ewd-assign2.onrender.com/search?type=${type ? "tv" : "movie"}&query=${searchText}&page=${page}`
             );
 
             console.log("Search request completed. Response data:", data);

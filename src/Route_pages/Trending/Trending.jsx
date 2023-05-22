@@ -10,7 +10,7 @@ const Trending = () => {
     const [content, setcontent] = useState([])
 
     const fetchTrending = async () => {
-        const { data } = await axios.get(`http://localhost:8080/trending?page=${page}`);
+        const { data } = await axios.get(`https://ewd-assign2.onrender.com/trending?page=${page}`);
 
         console.log(data);
 
