@@ -16,18 +16,17 @@ function App() {
       <div className="App">
         <Container>
           <Routes>
-            <Route path='/' Component={Trending} exact />
-            <Route path='/movies' Component={Movies} />
-            <Route path='/series' Component={Series} />
-            <Route path='/search' Component={Search} />
+            <Route path='/' element={<Trending />} />
+            <Route path='/movies' element={<Movies />} />
+            <Route path='/series' element={<Series />} />
+            <Route path='/search' element={<Search />} />
           </Routes>
         </Container>
       </div>
 
       <SimpleBottomNavigation />
     </BrowserRouter>
-
   )
 }
 
-export default App
+export default App;

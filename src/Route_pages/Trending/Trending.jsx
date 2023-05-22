@@ -5,16 +5,16 @@ import './Trending.css'
 import CustomPagination from '../../components/pagination/CustomPagination'
 
 const Trending = () => {
-    const api_key = 'ad7222180e17532d634c8f4c01feb56e';
+
     const [page, setPage] = useState(1);
     const [content, setcontent] = useState([])
 
     const fetchTrending = async () => {
-        const { data } = await axios.get(`https://api.themoviedb.org/3/trending/all/week?api_key=${api_key}&page=${page}`);
+        const { data } = await axios.get(`http://localhost:8080/trending?page=${page}`);
 
-        //console.log(data);
+        console.log(data);
 
-        setcontent(data.results);
+        setcontent(data);
     }
 
     useEffect(() => {

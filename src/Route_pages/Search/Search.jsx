@@ -35,17 +35,22 @@ const Search = () => {
 
     const fetchSearch = async () => {
         try {
+            console.log("Sending search request...");
+
             const { data } = await axios.get(
-                `https://api.themoviedb.org/3/search/${type ? "tv" : "movie"}?api_key=${api_key
-                }&language=en-US&query=${searchText}&page=${page}&include_adult=false`
+                `http://localhost:8080/search?type=${type ? "tv" : "movie"}&query=${searchText}&page=${page}`
             );
+
+            console.log("Search request completed. Response data:", data);
+
             setContent(data.results);
             setNumOfPages(data.total_pages);
-            // console.log(data);
         } catch (error) {
-            console.error(error);
+            console.error("An error occurred while processing the search request:", error);
         }
     };
+
+
 
     useEffect(() => {
         window.scroll(0, 0);

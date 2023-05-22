@@ -8,7 +8,6 @@ import useGenre from '../../Hooks/useGenre';
 
 const Movies = () => {
 
-    const api_key = 'ad7222180e17532d634c8f4c01feb56e';
 
     const [page, setPage] = useState(1);
     const [content, setContent] = useState([]);
@@ -17,12 +16,15 @@ const Movies = () => {
     const [selectedGenres, setSelectedGenres] = useState([]);
     const genreforURL = useGenre(selectedGenres);
 
+    //console.log("Content before fetch = " + content);
+
     const fetchMovies = async () => {
         const { data } = await axios.get(
-            `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreforURL}`
+            `http://localhost:8080/movies?page=${page}`
         );
-        setContent(data.results);
-        setNumOfPages(data.total_pages);
+        //console.log("Data = " + data.total_pages);
+        setContent(data);
+        setNumOfPages(data.length);
     };
 
     useEffect(() => {
